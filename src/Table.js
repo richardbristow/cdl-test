@@ -1,4 +1,4 @@
-const Table = ({ items }) => (
+const Table = ({ items, handleAddBasket }) => (
   <table>
     <caption>Products</caption>
     <thead>
@@ -19,7 +19,7 @@ const Table = ({ items }) => (
               `${items[item].offer.number} for ${items[item].offer.price}`}
           </td>
           <td>
-            <button>Add to basket</button>
+            <button onClick={() => handleAddBasket(item)}>Add to basket</button>
           </td>
         </tr>
       ))}
