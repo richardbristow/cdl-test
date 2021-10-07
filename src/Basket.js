@@ -9,6 +9,12 @@ const Basket = ({ items, basket }) => {
     return items[item].price * quantity;
   };
 
+  const totalBasket = (basket) => {
+    return Object.keys(basket).reduce((previous, current) => {
+      return previous + itemPricer(current, basket[current]);
+    }, 0);
+  };
+
   return (
     <table>
       <caption>Basket</caption>
@@ -34,6 +40,12 @@ const Basket = ({ items, basket }) => {
           </tr>
         )}
       </tbody>
+      <tfoot>
+        <tr>
+          <td colSpan="2">Total:</td>
+          <td colSpan="1">{totalBasket(basket)}</td>
+        </tr>
+      </tfoot>
     </table>
   );
 };
