@@ -1,5 +1,7 @@
+import StyledTable from './StyledTable';
+
 const Table = ({ items, handleAddBasket }) => (
-  <table>
+  <StyledTable>
     <caption>Products</caption>
     <thead>
       <tr>
@@ -26,7 +28,7 @@ const Table = ({ items, handleAddBasket }) => (
         </tr>
       ))}
     </tbody>
-  </table>
+  </StyledTable>
 );
 
 export default Table;

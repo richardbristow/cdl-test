@@ -1,3 +1,5 @@
+import StyledTable from './StyledTable';
+
 const Basket = ({ items, basket }) => {
   const itemPricer = (item, quantity) => {
     if (items[item].offer) {
@@ -16,7 +18,7 @@ const Basket = ({ items, basket }) => {
   };
 
   return (
-    <table>
+    <StyledTable>
       <caption>Basket</caption>
       <thead>
         <tr>
@@ -46,7 +48,7 @@ const Basket = ({ items, basket }) => {
           <td colSpan="1">{`£${(totalBasket(basket) / 100).toFixed(2)}`}</td>
         </tr>
       </tfoot>
-    </table>
+    </StyledTable>
   );
 };
 
