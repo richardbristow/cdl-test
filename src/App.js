@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import items from './items';
 import Table from './Table';
+import Basket from './Basket';
 
 const App = () => {
   const [basket, setBasket] = useState({});
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <div>
       <Table items={items} handleAddBasket={handleAddBasket} />
+      <Basket basket={basket} />
     </div>
   );
 };
