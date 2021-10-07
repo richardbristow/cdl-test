@@ -13,10 +13,12 @@ const Table = ({ items, handleAddBasket }) => (
       {Object.keys(items).map((item) => (
         <tr key={item}>
           <td>{item}</td>
-          <td>{`${items[item].price}`}</td>
+          <td>{`£${(items[item].price / 100).toFixed(2)}`}</td>
           <td>
             {items[item].offer &&
-              `${items[item].offer.number} for ${items[item].offer.price}`}
+              `${items[item].offer.number} for £${(
+                items[item].offer.price / 100
+              ).toFixed(2)}`}
           </td>
           <td>
             <button onClick={() => handleAddBasket(item)}>Add to basket</button>

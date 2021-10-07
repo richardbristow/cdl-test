@@ -31,7 +31,7 @@ const Basket = ({ items, basket }) => {
             <tr key={`basket-${item}`}>
               <td>{item}</td>
               <td>{basket[item]}</td>
-              <td>{itemPricer(item, basket[item])}</td>
+              <td>{`£${(itemPricer(item, basket[item]) / 100).toFixed(2)}`}</td>
             </tr>
           ))
         ) : (
@@ -43,7 +43,7 @@ const Basket = ({ items, basket }) => {
       <tfoot>
         <tr>
           <td colSpan="2">Total:</td>
-          <td colSpan="1">{totalBasket(basket)}</td>
+          <td colSpan="1">{`£${(totalBasket(basket) / 100).toFixed(2)}`}</td>
         </tr>
       </tfoot>
     </table>
