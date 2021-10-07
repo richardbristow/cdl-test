@@ -24,6 +24,7 @@ const App = () => {
     <StyledApp>
       <Table items={items} handleAddBasket={handleAddBasket} />
       <Basket items={items} basket={basket} />
+      <button onClick={() => setBasket({})}>Empty Basket</button>
     </StyledApp>
   );
 };
