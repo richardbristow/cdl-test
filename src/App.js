@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <Table items={items} handleAddBasket={handleAddBasket} />
-      <Basket basket={basket} />
+      <Basket items={items} basket={basket} />
     </div>
   );
 };

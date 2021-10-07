@@ -1,4 +1,14 @@
-const Basket = ({ basket }) => {
+const Basket = ({ items, basket }) => {
+  const itemPricer = (item, quantity) => {
+    if (items[item].offer) {
+      const { price, number } = items[item].offer;
+      const offerItemsPriced = Math.floor(quantity / number) * price;
+      const nonOfferItemsPriced = (quantity % number) * items[item].price;
+      return offerItemsPriced + nonOfferItemsPriced;
+    }
+    return items[item].price * quantity;
+  };
+
   return (
     <table>
       <caption>Basket</caption>
@@ -15,7 +25,7 @@ const Basket = ({ basket }) => {
             <tr key={`basket-${item}`}>
               <td>{item}</td>
               <td>{basket[item]}</td>
-              <td></td>
+              <td>{itemPricer(item, basket[item])}</td>
             </tr>
           ))
         ) : (
